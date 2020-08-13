@@ -1,0 +1,11 @@
+name: "Dops docs action"
+description: "Updates the docs of dops."
+author: "MarvinJWendt"
+branding:
+  icon: award
+  color: orange
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - ${{ inputs.myInput }}
