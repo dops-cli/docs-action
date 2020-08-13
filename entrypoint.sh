@@ -39,6 +39,6 @@ sed -i -E -r 's/`.*`<!-- feature-count -->/`'"$FEATURE_COUNT"'`<!-- feature-coun
 echo "## Staging changes..."
 git add .
 echo "## Commiting files..."
-git commit -m "ci: release new version" || true
+git commit -m "docs: autoupdate" || true
 echo "## Pushing to $BRANCH"
 git push -u origin $BRANCH
