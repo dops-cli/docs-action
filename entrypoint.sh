@@ -30,10 +30,14 @@ git update-index --assume-unchanged .github/workflows/*
 
 # Start release
 
+echo "## Downloading go modules..."
 go get -u
 
-FEATURE_COUNT=$(go run . mods --count)
+echo "## Generating MODULES.md..."
+go run . mods --markdown > MODULES.md
 
+echo "## Updating module count"
+FEATURE_COUNT=$(go run . mods --count)
 sed -i -E -r 's/`.*`<!-- feature-count -->/`'"$FEATURE_COUNT"'`<!-- feature-count -->/g' README.md
 
 echo "## Staging changes..."
