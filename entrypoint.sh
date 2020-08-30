@@ -33,8 +33,8 @@ git update-index --assume-unchanged .github/workflows/*
 echo "## Downloading go modules..."
 go get -u
 
-echo "## Generating MODULES.md..."
-go run . mods --markdown > MODULES.md
+echo "## Generating docs for modules..."
+go run . ci
 
 echo "## Updating module count"
 FEATURE_COUNT=$(go run . mods --count)
