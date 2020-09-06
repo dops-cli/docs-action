@@ -9,7 +9,5 @@ COPY entrypoint.sh /entrypoint.sh
 RUN apk add jq bash git go
 RUN apk add --no-cache --upgrade grep
 
-RUN go get -u github.com/git-chglog/git-chglog/cmd/git-chglog
-
 # Start action
 ENTRYPOINT ["/entrypoint.sh"]
