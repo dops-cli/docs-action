@@ -41,7 +41,6 @@ FEATURE_COUNT=$(go run . mods --count)
 sed -i -E -r 's/`.*`<!-- feature-count -->/`'"$FEATURE_COUNT"'`<!-- feature-count -->/g' README.md
 
 echo "## Generating changelog..."
-go install github.com/git-chglog/git-chglog/cmd/git-chglog
 git-chglog -o CHANGELOG.md
 
 echo "## Staging changes..."
