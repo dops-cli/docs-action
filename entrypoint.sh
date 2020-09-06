@@ -34,14 +34,14 @@ echo "## Downloading go modules..."
 go get -u
 
 echo "## Generating docs for modules..."
-go run . ci
+go run . --ci ci
 
 echo "## Updating module count"
 FEATURE_COUNT=$(go run . mods --count)
 sed -i -E -r 's/`.*`<!-- feature-count -->/`'"$FEATURE_COUNT"'`<!-- feature-count -->/g' README.md
 
 echo "## Generating changelog..."
-GO111MODULE=off go get github.com/git-chglog/git-chglog/cmd/git-chglog
+go install github.com/git-chglog/git-chglog/cmd/git-chglog
 git-chglog -o CHANGELOG.md
 
 echo "## Staging changes..."
