@@ -30,6 +30,9 @@ git update-index --assume-unchanged .github/workflows/*
 
 # Start release
 
+echo "## Getting git tags..."
+git fetch --tags
+
 echo "## Downloading go modules..."
 go get -u
 
