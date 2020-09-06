@@ -40,6 +40,9 @@ echo "## Updating module count"
 FEATURE_COUNT=$(go run . mods --count)
 sed -i -E -r 's/`.*`<!-- feature-count -->/`'"$FEATURE_COUNT"'`<!-- feature-count -->/g' README.md
 
+echo "## Generating changelog..."
+go run github.com/git-chglog/git-chglog/cmd/git-chglog -o CHANGELOG.md
+
 echo "## Staging changes..."
 git add .
 echo "## Commiting files..."
