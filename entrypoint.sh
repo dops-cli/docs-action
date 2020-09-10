@@ -36,6 +36,9 @@ git fetch --tags
 echo "## Downloading go modules..."
 go get -u
 
+echo "## Installing dops..."
+go install
+
 echo "## Installing svg-term..."
 npm install -g svg-term-cli
 
