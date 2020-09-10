@@ -36,6 +36,9 @@ git fetch --tags
 echo "## Downloading go modules..."
 go get -u
 
+echo "## Installing svg-term..."
+npm install -g svg-term-cli
+
 echo "## Generating docs for modules..."
 go run . --ci ci
 
