@@ -39,6 +39,9 @@ go get -u
 echo "## Installing svg-term..."
 npm install -g svg-term-cli
 
+echo "## Creating temporary example_casts directory..."
+mkdir example_casts
+
 echo "## Generating docs for modules..."
 go run . --ci ci
 
