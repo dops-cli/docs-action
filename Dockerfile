@@ -6,7 +6,7 @@ COPY LICENSE README.md /
 COPY entrypoint.sh /entrypoint.sh
 
 # Install some packages
-RUN apk add jq bash git go
+RUN apk add jq bash git go nodejs npm
 RUN apk add --no-cache --upgrade grep
 
 # Start action
