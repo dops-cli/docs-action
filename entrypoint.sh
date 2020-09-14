@@ -55,6 +55,12 @@ sed -i -E -r 's/`.*`<!-- feature-count -->/`'"$FEATURE_COUNT"'`<!-- feature-coun
 echo "## Generating changelog..."
 go run github.com/git-chglog/git-chglog/cmd/git-chglog -o CHANGELOG.md
 
+echo "## Go mod tidy..."
+go mod tidy
+
+echo "## Go fmt..."
+go fmt ./...
+
 echo "## Staging changes..."
 git add .
 echo "## Commiting files..."
