@@ -34,7 +34,7 @@ echo "## Getting git tags..."
 git fetch --tags
 
 echo "## Downloading go modules..."
-go get -u
+go get
 
 echo "## Installing dops..."
 go install
